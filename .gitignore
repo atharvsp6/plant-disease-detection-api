@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.dll
+
+# Environments
+.env
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and large artifacts
+_dataset/
+dataset/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

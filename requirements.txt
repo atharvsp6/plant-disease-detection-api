@@ -1,0 +1,25 @@
+# Plant Disease Detection API - Dependencies
+# ==========================================
+
+# FastAPI framework and web server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# YOLOv8 for plant disease classification
+ultralytics==8.1.0
+
+# Image processing
+pillow==10.1.0
+
+# Template rendering
+jinja2==3.1.2
+
+# Python multipart for file uploads
+python-multipart==0.0.6
+
+# Async support
+anyio==3.7.1
+
+# Optional but recommended for production
+# python-jose[cryptography]==3.3.0  # For JWT authentication if needed
+# passlib[bcrypt]==1.7.4  # For password hashing if needed
