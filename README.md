@@ -353,6 +353,37 @@ COPY . .
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
+### Deploy to Render
+
+This app is optimized for deployment on **Render.com**. The repo includes all necessary files including the trained YOLOv8 model (`best.pt`).
+
+**⚠️ Model Size Note**: The `best.pt` file is ~30MB. This is within Render's free tier limits, but deployment may take 2-3 minutes on first boot.
+
+**Steps:**
+
+1. Push this repo to GitHub (already done at [atharvsp6/plant-disease-detection-api](https://github.com/atharvsp6/plant-disease-detection-api))
+
+2. Go to [render.com](https://render.com) and sign up with GitHub
+
+3. Create a new **Web Service** and connect this repository
+
+4. Configure settings:
+   - **Name**: `plant-disease-api` (or your choice)
+   - **Environment**: `Python 3.10`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn app:app --host 0.0.0.0 --port $PORT`
+
+5. Click **Deploy** and wait for the service to start (2-5 minutes)
+
+6. Your API will be live at: `https://<your-service-name>.onrender.com`
+
+**Verification:**
+- Health check: `GET https://<your-service-name>.onrender.com/health`
+- Swagger docs: `https://<your-service-name>.onrender.com/docs`
+- Upload image: `POST https://<your-service-name>.onrender.com/predict`
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed step-by-step instructions.
+
 ## 📄 License
 
 This project is developed for educational purposes as a college project.
